@@ -1,0 +1,13 @@
+web:
+  build: .
+  dockerfile: webDockerfile
+  command: node /appexample.js
+  links:
+    - pythonservice
+  ports:
+    - 8080:80
+pythonservice:
+  build: .
+  dockerfile: pyDockerfile
+  ports:
+    - 5000:5000
